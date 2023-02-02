@@ -6,11 +6,13 @@ const {
   writeToFile,
 } = require("../public/assets/js/fsUtils");
 
+// REFERENCED WEEK #11 MINIPROJECT 1/29/23
 // GET Route for retrieving all notes
 notes.get("/", (req, res) => {
   readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
+// REFERENCED WEEK #11 MINIPROJECT 1/29/23
 // POST Route for a new note
 notes.post("/", (req, res) => {
   const { title, text } = req.body;
@@ -29,6 +31,7 @@ notes.post("/", (req, res) => {
   }
 });
 
+// REFERENCED WEEK #11 MINIPROJECT 1/29/23
 notes.delete("/:note_id", (req, res) => {
   const noteId = req.params.id;
   readFromFile("./db/db.json")
